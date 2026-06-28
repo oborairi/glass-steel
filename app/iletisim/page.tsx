@@ -124,20 +124,6 @@ export default function IletisimPage() {
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-xs font-medium text-fg-secondary tracking-wide">
-                          Hizmet Türü
-                        </label>
-                        <select className="px-4 py-3 rounded border border-line bg-bg-base text-sm text-fg-primary outline-none focus:border-accent transition-colors">
-                          <option>Seçiniz...</option>
-                          <option>Yapısal Mühendislik</option>
-                          <option>Çelik Konstrüksiyon</option>
-                          <option>Cam Cephe Sistemleri</option>
-                          <option>Proje Yönetimi</option>
-                          <option>Dış Ticaret & İhracat</option>
-                          <option>Diğer</option>
-                        </select>
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        <label className="text-xs font-medium text-fg-secondary tracking-wide">
                           Mesajınız *
                         </label>
                         <textarea
