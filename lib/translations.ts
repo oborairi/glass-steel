@@ -1,7 +1,7 @@
 export type Lang = "tr" | "en";
 
-export const translations = {
-  tr: {
+// TR bloğu referans şablon — tüm dillerin yapısı buna uyar
+const tr = {
     // Nav
     nav: {
       home: "Anasayfa",
@@ -132,9 +132,10 @@ export const translations = {
       partners: "Temsilcilikler",
       rights: "Tüm hakları saklıdır.",
     },
-  },
+};
 
-  en: {
+// EN bloğu, TR ile birebir aynı yapıda olmalı (typeof tr)
+const en: typeof tr = {
     nav: {
       home: "Home",
       about: "About Us",
@@ -256,5 +257,7 @@ export const translations = {
       partners: "Representations",
       rights: "All rights reserved.",
     },
-  },
-} as const;
+};
+
+export const translations = { tr, en };
+
