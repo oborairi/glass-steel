@@ -5,17 +5,43 @@ import { PageHero } from "@/components/sections/PageHero";
 import { FadeIn } from "@/components/ui/animations";
 import { Phone, Mail, Clock, Send } from "lucide-react";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xeebzjoq";
+
 export default function IletisimPage() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.MouseEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError("");
     setSending(true);
-    setTimeout(() => {
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+        form.reset();
+      } else {
+        setError(
+          "Mesaj gönderilemedi. Lütfen daha sonra tekrar deneyin veya doğrudan e-posta gönderin."
+        );
+      }
+    } catch {
+      setError(
+        "Bağlantı hatası. Lütfen internet bağlantınızı kontrol edip tekrar deneyin."
+      );
+    } finally {
       setSending(false);
-      setSubmitted(true);
-    }, 1200);
+    }
   };
 
   const contactDetails = [
@@ -113,27 +139,34 @@ export default function IletisimPage() {
                       </p>
                     </div>
                   ) : (
-                    <div className="flex flex-col gap-5">
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <Field label="Ad Soyad *" placeholder="Adınız Soyadınız" />
-                        <Field label="Firma *" placeholder="Firma Adı" />
+                        <Field name="ad_soyad" label="Ad Soyad *" placeholder="Adınız Soyadınız" required />
+                        <Field name="firma" label="Firma *" placeholder="Firma Adı" required />
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <Field label="E-posta *" type="email" placeholder="email@firma.com" />
-                        <Field label="Telefon" type="tel" placeholder="+90 5xx xxx xx xx" />
+                        <Field name="email" label="E-posta *" type="email" placeholder="email@firma.com" required />
+                        <Field name="telefon" label="Telefon" type="tel" placeholder="+90 5xx xxx xx xx" />
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-xs font-medium text-fg-secondary tracking-wide">
                           Mesajınız *
                         </label>
                         <textarea
+                          name="mesaj"
                           rows={5}
+                          required
                           placeholder="Projeniz veya talebiniz hakkında kısa bilgi verin..."
                           className="px-4 py-3 rounded border border-line bg-bg-base text-sm text-fg-primary outline-none focus:border-accent transition-colors resize-none leading-relaxed"
                         />
                       </div>
+
+                      {error && (
+                        <p className="text-xs text-red-500 leading-relaxed">{error}</p>
+                      )}
+
                       <button
-                        onClick={handleSubmit}
+                        type="submit"
                         disabled={sending}
                         className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded text-sm font-medium tracking-wide transition-all duration-300 disabled:opacity-60"
                         style={{ background: "var(--accent)", color: "#fff" }}
@@ -144,7 +177,7 @@ export default function IletisimPage() {
                       <p className="text-2xs text-fg-muted text-center">
                         * Zorunlu alanlar · En geç 1 iş günü içinde dönüş yapılır
                       </p>
-                    </div>
+                    </form>
                   )}
                 </div>
               </FadeIn>
@@ -157,13 +190,17 @@ export default function IletisimPage() {
 }
 
 function Field({
+  name,
   label,
   type = "text",
   placeholder,
+  required = false,
 }: {
+  name: string;
   label: string;
   type?: string;
   placeholder: string;
+  required?: boolean;
 }) {
   return (
     <div className="flex flex-col gap-2">
@@ -171,7 +208,9 @@ function Field({
         {label}
       </label>
       <input
+        name={name}
         type={type}
+        required={required}
         placeholder={placeholder}
         className="px-4 py-3 rounded border border-line bg-bg-base text-sm text-fg-primary outline-none focus:border-accent transition-colors"
       />
