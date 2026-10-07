@@ -60,9 +60,6 @@ export function PartnersPreview() {
                   />
                 </div>
                 <div className="p-7 flex flex-col justify-center">
-                  <span className="text-2xs font-mono tracking-[0.15em] uppercase text-accent mb-2">
-                    {p.molyLabel}
-                  </span>
                   <h3 className="text-lg font-medium text-fg-primary mb-2">
                     {p.molyTitle}
                   </h3>
