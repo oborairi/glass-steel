@@ -20,7 +20,7 @@ export default function TemsilciliklerimizPage() {
         <div className="max-w-8xl mx-auto px-6 lg:px-10">
           <FadeIn>
             <div className="flex items-center gap-3 mb-8">
-              <span className="text-2xs font-mono tracking-[0.25em] uppercase text-accent">
+              <span className="text-xs md:text-sm font-body font-semibold tracking-[0.18em] uppercase text-accent">
                 {p.molyMainLabel}
               </span>
               <div className="flex-1 h-px bg-line" />
@@ -87,7 +87,7 @@ export default function TemsilciliklerimizPage() {
         <div className="max-w-8xl mx-auto px-6 lg:px-10">
           <FadeIn>
             <div className="flex items-center gap-3 mb-8">
-              <span className="text-2xs font-mono tracking-[0.25em] uppercase text-fg-muted">
+              <span className="text-xs md:text-sm font-body font-semibold tracking-[0.18em] uppercase text-fg-muted">
                 {p.dachSecondaryLabel}
               </span>
               <div className="flex-1 h-px bg-line" />

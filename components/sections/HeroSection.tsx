@@ -135,7 +135,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mt-24 pt-10 border-t border-line"
         >
-          <p className="text-sm md:text-base font-mono font-semibold text-fg-muted tracking-[0.2em] uppercase mb-8">
+          <p className="text-sm md:text-base font-body font-semibold text-fg-muted tracking-[0.18em] uppercase mb-8">
             {t.hero.brandsLabel}
           </p>
           <div className="flex flex-wrap items-center gap-x-12 gap-y-6">
