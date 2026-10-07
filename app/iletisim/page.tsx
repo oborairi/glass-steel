@@ -4,10 +4,13 @@ import { useState } from "react";
 import { PageHero } from "@/components/sections/PageHero";
 import { FadeIn } from "@/components/ui/animations";
 import { Phone, Mail, Clock, Send } from "lucide-react";
+import { useLanguage } from "@/components/ui/LanguageProvider";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xeebzjoq";
 
 export default function IletisimPage() {
+  const { t } = useLanguage();
+  const c = t.contact;
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
@@ -31,14 +34,10 @@ export default function IletisimPage() {
         setSubmitted(true);
         form.reset();
       } else {
-        setError(
-          "Mesaj gönderilemedi. Lütfen daha sonra tekrar deneyin veya doğrudan e-posta gönderin."
-        );
+        setError(c.errSend);
       }
     } catch {
-      setError(
-        "Bağlantı hatası. Lütfen internet bağlantınızı kontrol edip tekrar deneyin."
-      );
+      setError(c.errNetwork);
     } finally {
       setSending(false);
     }
@@ -47,27 +46,30 @@ export default function IletisimPage() {
   const contactDetails = [
     {
       icon: Phone,
-      label: "Telefon",
+      label: c.labelPhone,
       value: "+90 (530) 738 80 80",
+      href: "tel:+905307388080",
     },
     {
       icon: Mail,
-      label: "E-posta",
+      label: c.labelEmail,
       value: "info@glass-steel.com.tr",
+      href: "mailto:info@glass-steel.com.tr",
     },
     {
       icon: Clock,
-      label: "Çalışma Saatleri",
-      value: "Pazartesi – Cuma\n09:00 – 18:00",
+      label: c.labelHours,
+      value: c.hours,
+      href: undefined,
     },
   ];
 
   return (
     <>
       <PageHero
-        tag="İletişim"
-        title="Projeniz için bize ulaşın"
-        subtitle="Teknik danışmanlık, fiyat teklifi veya genel bilgi için aşağıdaki kanallardan iletişime geçebilirsiniz."
+        tag={c.tag}
+        title={c.title}
+        subtitle={c.subtitle}
       />
 
       <section className="py-section bg-bg-base">
@@ -78,12 +80,7 @@ export default function IletisimPage() {
               <FadeIn>
                 <div className="flex flex-col gap-2">
                   {contactDetails.map((detail) => {
-                    const href =
-                      detail.label === "Telefon"
-                        ? "tel:+905307388080"
-                        : detail.label === "E-posta"
-                        ? "mailto:info@glass-steel.com.tr"
-                        : undefined;
+                    const href = detail.href;
                     return (
                       <div
                         key={detail.label}
@@ -132,31 +129,31 @@ export default function IletisimPage() {
                         <Send size={22} />
                       </div>
                       <h3 className="text-xl font-light text-fg-primary mb-2" style={{ fontFamily: "var(--font-display)" }}>
-                        Mesajınız iletildi
+                        {c.successTitle}
                       </h3>
                       <p className="text-sm text-fg-secondary max-w-sm">
-                        En geç bir iş günü içinde sizinle iletişime geçeceğiz.
+                        {c.successDesc}
                       </p>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <Field name="ad_soyad" label="Ad Soyad *" placeholder="Adınız Soyadınız" required />
-                        <Field name="firma" label="Firma *" placeholder="Firma Adı" required />
+                        <Field name="ad_soyad" label={c.fName} placeholder={c.fNamePh} required />
+                        <Field name="firma" label={c.fCompany} placeholder={c.fCompanyPh} required />
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <Field name="email" label="E-posta *" type="email" placeholder="email@firma.com" required />
-                        <Field name="telefon" label="Telefon" type="tel" placeholder="+90 5xx xxx xx xx" />
+                        <Field name="email" label={c.fEmail} type="email" placeholder={c.fEmailPh} required />
+                        <Field name="telefon" label={c.fPhone} type="tel" placeholder={c.fPhonePh} />
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-xs font-medium text-fg-secondary tracking-wide">
-                          Mesajınız *
+                          {c.fMessage}
                         </label>
                         <textarea
                           name="mesaj"
                           rows={5}
                           required
-                          placeholder="Projeniz veya talebiniz hakkında kısa bilgi verin..."
+                          placeholder={c.fMessagePh}
                           className="px-4 py-3 rounded border border-line bg-bg-base text-sm text-fg-primary outline-none focus:border-accent transition-colors resize-none leading-relaxed"
                         />
                       </div>
@@ -171,11 +168,11 @@ export default function IletisimPage() {
                         className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded text-sm font-medium tracking-wide transition-all duration-300 disabled:opacity-60"
                         style={{ background: "var(--accent)", color: "#fff" }}
                       >
-                        {sending ? "Gönderiliyor..." : "Teklif / Bilgi İste"}
+                        {sending ? c.sending : c.submit}
                         {!sending && <Send size={14} />}
                       </button>
                       <p className="text-2xs text-fg-muted text-center">
-                        * Zorunlu alanlar · En geç 1 iş günü içinde dönüş yapılır
+                        {c.note}
                       </p>
                     </form>
                   )}

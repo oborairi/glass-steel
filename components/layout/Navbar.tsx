@@ -15,7 +15,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   const navLinks = [
     { label: t.nav.home, href: "/" },
@@ -62,7 +62,7 @@ export function Navbar() {
             className="text-2xs font-mono tracking-[0.2em]"
             style={{ color: "var(--fg-inverse)", opacity: 0.45 }}
           >
-            İSTANBUL · TÜRKİYE
+            {lang === "en" ? "ISTANBUL · TÜRKİYE" : "İSTANBUL · TÜRKİYE"}
           </div>
         </div>
       </div>
