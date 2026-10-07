@@ -1,4 +1,4 @@
-export type Lang = "tr" | "en" | "ru";
+export type Lang = "tr" | "en" | "ru" | "de";
 
 // TR bloğu referans şablon — tüm dillerin yapısı buna uyar
 const tr = {
@@ -399,5 +399,135 @@ const ru: typeof tr = {
     },
 };
 
-export const translations = { tr, en, ru };
+// DE bloğu, TR ile birebir aynı yapıda olmalı (typeof tr)
+const de: typeof tr = {
+    nav: {
+      home: "Startseite",
+      about: "Über uns",
+      partners: "Vertretungen",
+      contact: "Kontakt",
+      quote: "Angebot anfordern",
+      logoSub: "ENGINEERING & BERATUNG",
+      location: "ISTANBUL · TÜRKEI",
+    },
+    hero: {
+      tag: "Engineering & Beratung",
+      title1: "Ihr Partner für",
+      titleEm1: "Engineering",
+      titleMid: "und technische Beratung —",
+      titleEm2: "Lösungen",
+      titleEnd: "für die Glas- und Metallindustrie.",
+      subtitle:
+        "Glass Steel bietet Engineering-, technische Beratungs- und Lösungsentwicklungsleistungen für die Glas- und Metallindustrie. Wir vertreten führende Marken der Branche in der Türkei.",
+      ctaPartners: "Unsere Vertretungen",
+      ctaContact: "Kontakt aufnehmen",
+      brandsLabel: "Unsere vertretenen Marken",
+    },
+    aboutPreview: {
+      tag: "Über uns",
+      title1: "Zuverlässige Lösungen für die",
+      titleEm: "Glas- und Metallindustrie.",
+      p1: "Mit unserer langjährigen Erfahrung in der Glas- und Metallindustrie bieten wir die Engineering-, technischen Beratungs- und Lösungsentwicklungsleistungen, die die Branche benötigt.",
+      p2: "In vielen Bereichen – von Produktionsprozessen über die Auswahl technischer Werkstoffe bis hin zu industriellen Anwendungen und chemischen Lösungen – bieten wir unseren Kunden nachhaltige und praxistaugliche Ansätze.",
+      more: "Mehr erfahren",
+      pillars: [
+        { label: "Technische Präzision", desc: "Volle Übereinstimmung mit technischen Normen und fehlerfreie Lösungen" },
+        { label: "Effizienz", desc: "Die zeit- und kosteneffizientesten Ansätze in jedem Prozess" },
+        { label: "Langfristiger Mehrwert", desc: "Nachhaltige und praxistaugliche, dauerhafte Lösungen" },
+        { label: "Fachkompetenz", desc: "Langjährige Erfahrung kombiniert mit modernem Engineering" },
+      ],
+    },
+    partnersPreview: {
+      tag: "Vertretungen",
+      title: "Die Marken, die wir vertreten",
+      detail: "Mehr erfahren",
+      molyLabel: "Unsere Hauptvertretung",
+      molyTitle: "Schmierstofflösungen für die Glasindustrie",
+      molyDesc: "Hochleistungsschmierstoffe für die Glasherstellung – mit über 85 Jahren Erfahrung.",
+      dachTitle: "Industrielle Chemielösungen",
+      dachDesc: "Chemische Produkte und Beratungsleistungen für die Metallindustrie.",
+      website: "Website",
+    },
+    cta: {
+      title1: "Lassen Sie uns eine Lösung",
+      titleEm: "für Ihr Projekt finden.",
+      subtitle: "Kontaktieren Sie uns für technische Beratung oder Informationen – wir melden uns umgehend bei Ihnen.",
+      quote: "Angebot anfordern",
+    },
+    about: {
+      tag: "Über uns",
+      title: "Zuverlässige und nachhaltige Lösungen für die Glas- und Metallindustrie",
+      p1: "Mit unserer langjährigen Erfahrung in der Glas- und Metallindustrie bieten wir die Engineering-, technischen Beratungs- und Lösungsentwicklungsleistungen, die die Branche benötigt. In vielen Bereichen – Produktionsprozesse, Strukturierung, Auswahl technischer Werkstoffe, industrielle Anwendungen und chemische Lösungen – bieten wir unseren Kunden nachhaltige und praxistaugliche Ansätze.",
+      p2: "Bei jedem Projekt stehen technische Präzision, Effizienz und die Schaffung langfristiger Werte im Vordergrund; dabei verbinden wir unser Branchenwissen mit einem modernen Engineering-Ansatz. Unser Ziel bei Glass Steel ist es, zuverlässige Lösungen auf höchstem Niveau zu entwickeln, die auf die Bedürfnisse unserer Partner zugeschnitten sind.",
+      p3: "In der Glasindustrie zeichnen wir uns durch unsere Expertise bei der Umsetzung sämtlicher Abläufe beim Bau neuer Produktionsanlagen aus – vom Gemengehaus und den Schmelzöfen über IS-Maschinen und Kühlöfen bis hin zur Verpackung.",
+      p4: "Durch die Zusammenarbeit mit den von uns vertretenen Unternehmen liefern wir Projekte termingerecht, vollständig und in höchster Qualität.",
+      approachTag: "Unser Ansatz",
+      approachTitle: "Unsere Arbeitsprinzipien",
+      watchVideo: "Video ansehen",
+      highlights: [
+        { title: "Technische Präzision", desc: "Volle Übereinstimmung mit technischen Normen und fehlerfreie technische Lösungen in jedem Projekt." },
+        { title: "Effizienz", desc: "Wir optimieren Prozesse und bieten die zeit- und kosteneffizientesten Ansätze." },
+        { title: "Langfristiger Mehrwert", desc: "Keine kurzfristigen Lösungen, sondern nachhaltiger und praxistauglicher, dauerhafter Mehrwert." },
+        { title: "Branchenkompetenz", desc: "Wir verbinden langjährige Erfahrung mit einem modernen Engineering-Ansatz." },
+      ],
+    },
+    partners: {
+      tag: "Vertretungen",
+      title: "Der zuverlässige regionale Vertreter internationaler Marken",
+      subtitle: "Wir bringen die Produkte und Lösungen führender internationaler Unternehmen auf die Märkte der Türkei, Russlands, des Nahen Ostens und der Turkrepubliken.",
+      molyMainLabel: "Unsere Hauptvertretung",
+      molySub: "Schmierstofflösungen für die Glasindustrie · Vereinigtes Königreich",
+      molyDesc: "Das britische Unternehmen Molyslip verfügt über mehr als 85 Jahre Erfahrung und stellt Hochleistungs-Spezialschmierstoffe für die Behälterglasindustrie her. Die Produkte halten hohen Temperaturen, hohen Geschwindigkeiten und intensiven Produktionsbedingungen stand, reduzieren Reibung und Verschleiß, verlängern die Lebensdauer der Maschinen und steigern die Effizienz.",
+      molyWebsite: "Molyslip-Website",
+      molyProductsTitle: "Produktreihen für die Glasindustrie",
+      molyProducts: [
+        { name: "EGC-Reihe", desc: "Gebundene Trockengraphit-Schmierstoffe – bilden eine thermische Barriere" },
+        { name: "Glasstek SL-40", desc: "Sprühschmierstoff, der Scherenmesser vor Oxidation schützt" },
+        { name: "Molyslip DL-Reihe", desc: "Rinnenöle für Tropfenverteilersysteme" },
+        { name: "Glasstek IS-Reihe", desc: "Premium-Schmierlösung für IS-Maschinen" },
+        { name: "Glasstek AG-20", desc: "Graphitschmierstoff auf Wasserbasis für Förderbänder" },
+      ],
+      dachSecondaryLabel: "Weitere Vertretung",
+      dachSub: "Industrielle Chemielösungen",
+      dachDesc: "DACH Chemicals berät Hersteller, die chemische Produkte für verschiedene Industriezweige – insbesondere die Metallindustrie – liefern. Mit Produktgruppen unter eigenen eingetragenen Marken, die auf eigenem Know-how basieren, entwickelt das Unternehmen spezielle chemische Lösungen für Effizienz, Qualität und Nachhaltigkeit in Produktionsprozessen.",
+      dachWebsite: "Website besuchen",
+    },
+    contact: {
+      tag: "Kontakt",
+      title: "Kontaktieren Sie uns für Ihr Projekt",
+      subtitle: "Für technische Beratung, ein Angebot oder allgemeine Informationen erreichen Sie uns über die folgenden Kanäle.",
+      labelPhone: "Telefon",
+      labelEmail: "E-Mail",
+      labelHours: "Geschäftszeiten",
+      hours: "Montag – Freitag\n09:00 – 18:00 (GMT+3)",
+      formTitle: "Nachricht senden",
+      fName: "Vor- und Nachname *",
+      fNamePh: "Ihr Vor- und Nachname",
+      fCompany: "Unternehmen *",
+      fCompanyPh: "Name des Unternehmens",
+      fEmail: "E-Mail *",
+      fEmailPh: "email@unternehmen.de",
+      fPhone: "Telefon",
+      fPhonePh: "+49 xxx xxxxxxx",
+      fSubject: "Betreff",
+      fSubjectOptions: ["Bitte wählen...", "Molyslip-Produkte", "DACH-Produkte", "Technische Beratung", "Allgemeine Informationen", "Sonstiges"],
+      fMessage: "Ihre Nachricht *",
+      fMessagePh: "Beschreiben Sie kurz Ihr Projekt oder Ihre Anfrage...",
+      submit: "Angebot / Informationen anfordern",
+      sending: "Wird gesendet...",
+      successTitle: "Ihre Nachricht wurde gesendet",
+      successDesc: "Wir melden uns innerhalb eines Werktages bei Ihnen.",
+      note: "* Pflichtfelder · Antwort innerhalb eines Werktages",
+      errSend: "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut oder schreiben Sie uns direkt eine E-Mail.",
+      errNetwork: "Verbindungsfehler. Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+    },
+    footer: {
+      desc: "Wir bieten Engineering-, technische Beratungs- und Lösungsentwicklungsleistungen für die Glas- und Metallindustrie.",
+      quickAccess: "Schnellzugriff",
+      partners: "Vertretungen",
+      rights: "Alle Rechte vorbehalten.",
+    },
+};
+
+export const translations = { tr, en, ru, de };
 

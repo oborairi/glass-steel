@@ -10,6 +10,7 @@ const languages: { code: Lang; short: string; name: string }[] = [
   { code: "tr", short: "TR", name: "Türkçe" },
   { code: "en", short: "EN", name: "English" },
   { code: "ru", short: "RU", name: "Русский" },
+  { code: "de", short: "DE", name: "Deutsch" },
 ];
 
 const flagClass = "w-[22px] h-[15px] rounded-[2px] shrink-0 ring-1 ring-black/10";

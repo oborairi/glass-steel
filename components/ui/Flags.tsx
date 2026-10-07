@@ -65,8 +65,19 @@ function RussiaFlag({ className }: FlagProps) {
   );
 }
 
+function GermanyFlag({ className }: FlagProps) {
+  return (
+    <svg viewBox="0 0 5 3" preserveAspectRatio="none" className={className} aria-hidden="true">
+      <rect width="5" height="1" y="0" fill="#000" />
+      <rect width="5" height="1" y="1" fill="#DD0000" />
+      <rect width="5" height="1" y="2" fill="#FFCE00" />
+    </svg>
+  );
+}
+
 export function Flag({ lang, className }: { lang: Lang; className?: string }) {
   if (lang === "tr") return <TurkeyFlag className={className} />;
   if (lang === "en") return <UKFlag className={className} />;
-  return <RussiaFlag className={className} />;
+  if (lang === "ru") return <RussiaFlag className={className} />;
+  return <GermanyFlag className={className} />;
 }
