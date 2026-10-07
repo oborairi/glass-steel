@@ -78,33 +78,6 @@ export default function TemsilciliklerimizPage() {
                 </div>
               </FadeIn>
             </div>
-
-            {/* Product range strip */}
-            <FadeIn delay={0.15}>
-              <div className="border-t border-line p-8 lg:p-12">
-                <h3 className="text-2xs font-mono tracking-[0.2em] uppercase text-fg-muted mb-6">
-                  {p.molyProductsTitle}
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {p.molyProducts.map((prod) => (
-                    <div
-                      key={prod.name}
-                      className="flex items-start gap-3 p-4 rounded border border-line"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-1.5" />
-                      <div>
-                        <div className="text-sm font-medium text-fg-primary mb-0.5">
-                          {prod.name}
-                        </div>
-                        <div className="text-xs text-fg-muted leading-relaxed font-light">
-                          {prod.desc}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
           </div>
         </div>
       </section>
