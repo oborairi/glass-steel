@@ -80,12 +80,12 @@
 
 @layer components {
   .section-tag {
-    @apply inline-flex items-center gap-3 text-2xs font-mono tracking-[0.25em] uppercase mb-4;
+    @apply inline-flex items-center gap-4 text-sm md:text-base font-mono font-semibold tracking-[0.2em] uppercase mb-4;
     color: var(--accent);
   }
   .section-tag::before {
     content: '';
-    @apply block w-6 h-px;
+    @apply block w-10 h-0.5;
     background: var(--accent);
   }
 
