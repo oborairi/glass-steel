@@ -80,8 +80,8 @@ const tr = {
     // Partners page
     partners: {
       tag: "Temsilciliklerimiz",
-      title: "Dünya markalarının Türkiye'deki güvenilir temsilcisi",
-      subtitle: "Alanında lider uluslararası firmaların ürün ve çözümlerini Türkiye pazarına sunuyoruz.",
+      title: "Dünya markalarının bölgedeki güvenilir temsilcisi",
+      subtitle: "Alanında lider uluslararası firmaların ürün ve çözümlerini Türkiye, Rusya, Orta Doğu ve Türk Cumhuriyetleri pazarlarına sunuyoruz.",
       molyMainLabel: "Ana Temsilciliğimiz",
       molySub: "Cam Endüstrisi Yağlama Çözümleri · Birleşik Krallık",
       molyDesc: "85 yılı aşkın deneyime sahip, İngiltere merkezli Molyslip; cam kap üretim endüstrisi için yüksek performanslı özel yağlayıcılar üretir. Yüksek sıcaklık, yüksek hız ve yoğun üretim koşullarına dayanıklı ürünleriyle sürtünmeyi ve aşınmayı azaltır; makine ömrünü uzatır ve verimliliği artırır.",
@@ -209,8 +209,8 @@ const en: typeof tr = {
     },
     partners: {
       tag: "Representations",
-      title: "The trusted Turkish representative of global brands",
-      subtitle: "We bring the products and solutions of leading international firms to the Turkish market.",
+      title: "The trusted regional representative of global brands",
+      subtitle: "We bring the products and solutions of leading international firms to the markets of Türkiye, Russia, the Middle East and the Turkic Republics.",
       molyMainLabel: "Our Main Representation",
       molySub: "Glass Industry Lubrication Solutions · United Kingdom",
       molyDesc: "With over 85 years of experience, UK-based Molyslip produces high-performance specialty lubricants for the glass container manufacturing industry. Its products withstand high temperatures, high speeds and intense production conditions, reducing friction and wear, extending machine life and increasing efficiency.",
