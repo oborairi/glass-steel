@@ -75,9 +75,41 @@ function GermanyFlag({ className }: FlagProps) {
   );
 }
 
+function starPoints(cx: number, cy: number, r: number, rotation: number) {
+  return Array.from({ length: 10 }, (_, i) => {
+    const angle = rotation + (i * Math.PI) / 5;
+    const rad = i % 2 === 0 ? r : r * 0.382;
+    return `${(cx + rad * Math.cos(angle)).toFixed(3)},${(cy + rad * Math.sin(angle)).toFixed(3)}`;
+  }).join(" ");
+}
+
+function ChinaFlag({ className }: FlagProps) {
+  // Büyük yıldız (5,5); küçük yıldızların birer köşesi büyük yıldıza bakar
+  const small = [
+    [10, 2],
+    [12, 4],
+    [12, 7],
+    [10, 9],
+  ];
+  return (
+    <svg viewBox="0 0 30 20" className={className} aria-hidden="true">
+      <rect width="30" height="20" fill="#EE1C25" />
+      <polygon points={starPoints(5, 5, 3, -Math.PI / 2)} fill="#FFFF00" />
+      {small.map(([x, y]) => (
+        <polygon
+          key={`${x}-${y}`}
+          points={starPoints(x, y, 1, Math.atan2(5 - y, 5 - x))}
+          fill="#FFFF00"
+        />
+      ))}
+    </svg>
+  );
+}
+
 export function Flag({ lang, className }: { lang: Lang; className?: string }) {
   if (lang === "tr") return <TurkeyFlag className={className} />;
   if (lang === "en") return <UKFlag className={className} />;
   if (lang === "ru") return <RussiaFlag className={className} />;
-  return <GermanyFlag className={className} />;
+  if (lang === "de") return <GermanyFlag className={className} />;
+  return <ChinaFlag className={className} />;
 }

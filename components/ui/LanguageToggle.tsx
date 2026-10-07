@@ -11,6 +11,7 @@ const languages: { code: Lang; short: string; name: string }[] = [
   { code: "en", short: "EN", name: "English" },
   { code: "ru", short: "RU", name: "Русский" },
   { code: "de", short: "DE", name: "Deutsch" },
+  { code: "zh", short: "ZH", name: "中文" },
 ];
 
 const flagClass = "w-[22px] h-[15px] rounded-[2px] shrink-0 ring-1 ring-black/10";

@@ -1,4 +1,4 @@
-export type Lang = "tr" | "en" | "ru" | "de";
+export type Lang = "tr" | "en" | "ru" | "de" | "zh";
 
 // TR bloğu referans şablon — tüm dillerin yapısı buna uyar
 const tr = {
@@ -529,5 +529,135 @@ const de: typeof tr = {
     },
 };
 
-export const translations = { tr, en, ru, de };
+// ZH bloğu (Basitleştirilmiş Çince), TR ile birebir aynı yapıda olmalı (typeof tr)
+const zh: typeof tr = {
+    nav: {
+      home: "首页",
+      about: "关于我们",
+      partners: "代理品牌",
+      contact: "联系我们",
+      quote: "获取报价",
+      logoSub: "工程与咨询",
+      location: "土耳其 · 伊斯坦布尔",
+    },
+    hero: {
+      tag: "工程与咨询",
+      title1: "玻璃与金属行业",
+      titleEm1: "工程",
+      titleMid: "与技术咨询的",
+      titleEm2: "解决方案",
+      titleEnd: "合作伙伴。",
+      subtitle:
+        "Glass Steel 为玻璃和金属行业提供工程、技术咨询及解决方案开发服务，并担任行业领先品牌在土耳其的代理。",
+      ctaPartners: "代理品牌",
+      ctaContact: "联系我们",
+      brandsLabel: "我们代理的品牌",
+    },
+    aboutPreview: {
+      tag: "关于我们",
+      title1: "为玻璃与金属行业提供",
+      titleEm: "可靠的解决方案。",
+      p1: "凭借在玻璃和金属行业多年的经验，我们提供行业所需的工程、技术咨询及解决方案开发服务。",
+      p2: "在生产工艺、技术材料选型、工业应用及化学解决方案等诸多领域，我们为客户提供可持续且切实可行的方案。",
+      more: "了解更多",
+      pillars: [
+        { label: "技术精准", desc: "完全符合工程标准，提供零差错的解决方案" },
+        { label: "高效", desc: "在每个环节提供最省时、最具成本效益的方案" },
+        { label: "长期价值", desc: "可持续、可落地的长效解决方案" },
+        { label: "专业能力", desc: "多年经验与现代工程理念相结合" },
+      ],
+    },
+    partnersPreview: {
+      tag: "代理品牌",
+      title: "我们代理的品牌",
+      detail: "了解更多",
+      molyLabel: "主要代理品牌",
+      molyTitle: "玻璃行业润滑解决方案",
+      molyDesc: "专为玻璃制造业打造的高性能润滑剂，拥有超过 85 年的经验。",
+      dachTitle: "工业化学解决方案",
+      dachDesc: "面向金属行业的化学产品及咨询服务。",
+      website: "官方网站",
+    },
+    cta: {
+      title1: "让我们一起",
+      titleEm: "为您的项目找到解决方案。",
+      subtitle: "如需技术咨询或了解更多信息，请联系我们，我们将尽快回复。",
+      quote: "获取报价",
+    },
+    about: {
+      tag: "关于我们",
+      title: "为玻璃与金属行业提供可靠、可持续的解决方案",
+      p1: "凭借在玻璃和金属行业多年的经验，我们提供行业所需的工程、技术咨询及解决方案开发服务。在生产工艺、组织架构、技术材料选型、工业应用及化学解决方案等诸多领域，我们为客户提供可持续且切实可行的方案。",
+      p2: "在每个项目中，我们始终将技术精准、效率和长期价值创造放在首位，将行业经验与现代工程理念相结合。Glass Steel 的目标是为合作伙伴量身打造可靠、高标准的解决方案。",
+      p3: "在玻璃行业新建生产工厂的过程中，从配料车间、熔窑、IS 制瓶机、退火炉到包装，我们在全部工序的实施方面具备突出的专业能力。",
+      p4: "通过与所代理企业的紧密合作，我们确保项目按时、完整并以最高质量交付。",
+      approachTag: "我们的理念",
+      approachTitle: "我们的工作原则",
+      watchVideo: "观看宣传视频",
+      highlights: [
+        { title: "技术精准", desc: "在每个项目中完全符合工程标准，提供零差错的技术解决方案。" },
+        { title: "高效", desc: "我们优化流程，提供最省时、最具成本效益的方案。" },
+        { title: "长期价值", desc: "不追求短期权宜之计，而是创造可持续、可落地的长期价值。" },
+        { title: "行业专长", desc: "我们将多年经验与现代工程理念相结合。" },
+      ],
+    },
+    partners: {
+      tag: "代理品牌",
+      title: "全球品牌值得信赖的区域代理",
+      subtitle: "我们将行业领先的国际企业的产品与解决方案引入土耳其、俄罗斯、中东及突厥语国家市场。",
+      molyMainLabel: "主要代理品牌",
+      molySub: "玻璃行业润滑解决方案 · 英国",
+      molyDesc: "总部位于英国的 Molyslip 拥有超过 85 年的经验，专为玻璃容器制造业生产高性能特种润滑剂。其产品能够耐受高温、高速及高强度生产条件，有效减少摩擦和磨损，延长设备寿命并提高生产效率。",
+      molyWebsite: "Molyslip 官网",
+      molyProductsTitle: "玻璃行业产品系列",
+      molyProducts: [
+        { name: "EGC 系列", desc: "粘结型干性石墨润滑剂——形成隔热屏障" },
+        { name: "Glasstek SL-40", desc: "保护剪刀刀片免受氧化的喷雾润滑剂" },
+        { name: "Molyslip DL 系列", desc: "用于料滴分配系统的料槽油" },
+        { name: "Glasstek IS 系列", desc: "IS 制瓶机高端润滑解决方案" },
+        { name: "Glasstek AG-20", desc: "用于输送带的水基石墨润滑剂" },
+      ],
+      dachSecondaryLabel: "其他代理品牌",
+      dachSub: "工业化学解决方案",
+      dachDesc: "DACH Chemicals 为向各工业领域（尤其是金属行业）供应化学产品的制造商提供咨询服务。凭借基于自有技术开发的注册品牌产品系列，公司研发专用化学解决方案，助力生产过程实现高效、优质与可持续。",
+      dachWebsite: "访问官网",
+    },
+    contact: {
+      tag: "联系我们",
+      title: "就您的项目与我们联系",
+      subtitle: "如需技术咨询、报价或一般信息，欢迎通过以下方式与我们联系。",
+      labelPhone: "电话",
+      labelEmail: "电子邮箱",
+      labelHours: "工作时间",
+      hours: "周一至周五\n09:00 – 18:00（GMT+3）",
+      formTitle: "发送留言",
+      fName: "姓名 *",
+      fNamePh: "您的姓名",
+      fCompany: "公司 *",
+      fCompanyPh: "公司名称",
+      fEmail: "电子邮箱 *",
+      fEmailPh: "email@company.com",
+      fPhone: "电话",
+      fPhonePh: "+86 1xx xxxx xxxx",
+      fSubject: "主题",
+      fSubjectOptions: ["请选择...", "Molyslip 产品", "DACH 产品", "技术咨询", "一般信息", "其他"],
+      fMessage: "留言内容 *",
+      fMessagePh: "请简要介绍您的项目或需求...",
+      submit: "获取报价 / 咨询",
+      sending: "发送中...",
+      successTitle: "您的留言已发送",
+      successDesc: "我们将在一个工作日内与您联系。",
+      note: "* 为必填项 · 我们将在 1 个工作日内回复",
+      errSend: "留言发送失败，请稍后重试或直接发送电子邮件给我们。",
+      errNetwork: "网络连接错误，请检查您的网络连接后重试。",
+    },
+    footer: {
+      desc: "我们为玻璃和金属行业提供工程、技术咨询及解决方案开发服务。",
+      quickAccess: "快速导航",
+      partners: "代理品牌",
+      rights: "版权所有。",
+    },
+};
+
+export const translations = { tr, en, ru, de, zh };
 

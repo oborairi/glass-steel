@@ -25,20 +25,22 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem("gs-lang") as Lang | null;
-    if (saved === "tr" || saved === "en" || saved === "ru" || saved === "de") {
+    if (saved && Object.prototype.hasOwnProperty.call(translations, saved)) {
       setLangState(saved);
-      document.documentElement.lang = saved;
+      document.documentElement.lang = saved === "zh" ? "zh-CN" : saved;
     }
   }, []);
 
   const setLang = (l: Lang) => {
     setLangState(l);
     localStorage.setItem("gs-lang", l);
-    document.documentElement.lang = l;
+    document.documentElement.lang = l === "zh" ? "zh-CN" : l;
   };
 
-  const toggleLang = () =>
-    setLang(lang === "tr" ? "en" : lang === "en" ? "ru" : lang === "ru" ? "de" : "tr");
+  const toggleLang = () => {
+    const order = Object.keys(translations) as Lang[];
+    setLang(order[(order.indexOf(lang) + 1) % order.length]);
+  };
 
   return (
     <LanguageContext.Provider
