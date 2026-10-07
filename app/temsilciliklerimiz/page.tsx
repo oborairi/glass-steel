@@ -5,7 +5,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { FadeIn } from "@/components/ui/animations";
 import { useLanguage } from "@/components/ui/LanguageProvider";
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 export default function TemsilciliklerimizPage() {
   const { t } = useLanguage();
@@ -95,12 +95,7 @@ export default function TemsilciliklerimizPage() {
           </FadeIn>
 
           <FadeIn delay={0.05}>
-            <a
-              href="https://dachchemicals.com/tr/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block glass-card overflow-hidden hover:border-line-strong transition-colors"
-            >
+            <div className="glass-card overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-3">
                 <div className="flex items-center justify-center p-10 lg:p-12 bg-bg-base border-b lg:border-b-0 lg:border-r border-line">
                   <Image
@@ -113,7 +108,7 @@ export default function TemsilciliklerimizPage() {
                 </div>
 
                 <div className="lg:col-span-2 p-8 lg:p-10">
-                  <div className="flex items-start justify-between gap-4 mb-4">
+                  <div className="mb-4">
                     <div>
                       <h2
                         className="text-2xl font-light text-fg-primary mb-1"
@@ -125,23 +120,23 @@ export default function TemsilciliklerimizPage() {
                         {p.dachSub}
                       </span>
                     </div>
-                    <div
-                      className="shrink-0 w-10 h-10 rounded flex items-center justify-center"
-                      style={{ background: "var(--accent-soft)", color: "var(--accent)" }}
-                    >
-                      <ExternalLink size={16} />
-                    </div>
                   </div>
                   <p className="text-sm text-fg-secondary leading-relaxed font-light">
                     {p.dachDesc}
                   </p>
-                  <div className="mt-6 inline-flex items-center gap-2 text-xs font-mono tracking-wider uppercase text-fg-muted group-hover:text-accent transition-colors">
+                  <a
+                    href="https://dachchemicals.com/tr/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded text-sm font-medium tracking-wide transition-all duration-300"
+                    style={{ background: "var(--accent)", color: "#fff" }}
+                  >
                     {p.dachWebsite}
-                    <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
-                  </div>
+                    <ExternalLink size={14} />
+                  </a>
                 </div>
               </div>
-            </a>
+            </div>
           </FadeIn>
         </div>
       </section>
