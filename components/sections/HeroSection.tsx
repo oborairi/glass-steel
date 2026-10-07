@@ -78,17 +78,10 @@ export function HeroSection() {
           animate="visible"
           className="max-w-4xl"
         >
-          {/* Tag */}
-          <motion.div variants={itemVariants}>
-            <span className="section-tag">
-              {t.hero.tag}
-            </span>
-          </motion.div>
-
           {/* Main heading */}
           <motion.h1
             variants={itemVariants}
-            className="display-heading text-display-lg mt-6 mb-8"
+            className="display-heading text-display-lg mb-8"
           >
             {t.hero.title1}{" "}
             <em className="text-fg-secondary not-italic">{t.hero.titleEm1}</em>
