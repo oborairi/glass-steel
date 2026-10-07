@@ -25,7 +25,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem("gs-lang") as Lang | null;
-    if (saved === "tr" || saved === "en") {
+    if (saved === "tr" || saved === "en" || saved === "ru") {
       setLangState(saved);
       document.documentElement.lang = saved;
     }
@@ -37,7 +37,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.lang = l;
   };
 
-  const toggleLang = () => setLang(lang === "tr" ? "en" : "tr");
+  const toggleLang = () =>
+    setLang(lang === "tr" ? "en" : lang === "en" ? "ru" : "tr");
 
   return (
     <LanguageContext.Provider

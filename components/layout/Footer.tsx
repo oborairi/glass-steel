@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useLanguage } from "@/components/ui/LanguageProvider";
 
 export function Footer() {
-  const { t, lang } = useLanguage();
+  const { t } = useLanguage();
   const year = new Date().getFullYear();
 
   const quickLinks = [
@@ -110,7 +110,7 @@ export function Footer() {
             © {year} Glass Steel Mühendislik Danışmanlık San. ve Dış Tic. Ltd. Şti. — {t.footer.rights}
           </p>
           <p className="text-2xs font-mono tracking-widest" style={{ color: "var(--fg-muted)" }}>
-            {lang === "en" ? "ISTANBUL · TÜRKİYE" : "İSTANBUL · TÜRKİYE"}
+            {t.nav.location}
           </p>
         </div>
       </div>
