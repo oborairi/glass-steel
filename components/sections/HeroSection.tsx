@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/components/ui/LanguageProvider";
+import { VideoPlayer } from "@/components/ui/VideoPlayer";
 
 const containerVariants = {
   hidden: {},
@@ -71,17 +72,18 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pt-32 pb-20">
+      <div className="relative z-10 w-full max-w-8xl mx-auto px-6 lg:px-10 pt-32 pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-center">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-4xl"
         >
           {/* Main heading */}
           <motion.h1
             variants={itemVariants}
-            className="display-heading text-display-lg mb-8"
+            className="display-heading mb-8"
+            style={{ fontSize: "clamp(2.5rem, 4.6vw, 4.5rem)" }}
           >
             {t.hero.title1}{" "}
             <em className="text-fg-secondary not-italic">{t.hero.titleEm1}</em>
@@ -115,6 +117,16 @@ export function HeroSection() {
             </Link>
           </motion.div>
         </motion.div>
+
+          {/* Intro video */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <VideoPlayer src="/intro.mp4" label={t.about.watchVideo} />
+          </motion.div>
+        </div>
 
         {/* Partner badges row */}
         <motion.div
