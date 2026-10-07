@@ -18,14 +18,6 @@ export default function TemsilciliklerimizPage() {
       {/* ===== MOLYSLIP — Featured / Primary ===== */}
       <section className="py-section bg-bg-base">
         <div className="max-w-8xl mx-auto px-6 lg:px-10">
-          <FadeIn>
-            <div className="flex items-center gap-3 mb-8">
-              <span className="text-xs md:text-sm font-body font-semibold tracking-[0.18em] uppercase text-accent">
-                {p.molyMainLabel}
-              </span>
-              <div className="flex-1 h-px bg-line" />
-            </div>
-          </FadeIn>
 
           <div className="glass-card overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -85,14 +77,6 @@ export default function TemsilciliklerimizPage() {
       {/* ===== DACH — Secondary ===== */}
       <section className="py-section bg-bg-surface border-t border-line">
         <div className="max-w-8xl mx-auto px-6 lg:px-10">
-          <FadeIn>
-            <div className="flex items-center gap-3 mb-8">
-              <span className="text-xs md:text-sm font-body font-semibold tracking-[0.18em] uppercase text-fg-muted">
-                {p.dachSecondaryLabel}
-              </span>
-              <div className="flex-1 h-px bg-line" />
-            </div>
-          </FadeIn>
 
           <FadeIn delay={0.05}>
             <div className="glass-card overflow-hidden">
