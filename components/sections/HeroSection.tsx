@@ -135,29 +135,41 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mt-24 pt-10 border-t border-line"
         >
-          <p className="text-2xs font-mono text-fg-muted tracking-[0.2em] uppercase mb-6">
+          <p className="text-sm md:text-base font-mono font-semibold text-fg-muted tracking-[0.2em] uppercase mb-8">
             {t.hero.brandsLabel}
           </p>
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
-            <div
-              className="flex items-center justify-center px-5 py-3 rounded"
+          <div className="flex flex-wrap items-center gap-x-12 gap-y-6">
+            <a
+              href="https://molyslip.co.uk/glass/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Molyslip"
+              className="flex items-center justify-center px-8 py-5 rounded transition-transform duration-300 hover:scale-105"
               style={{ background: "#E2231A" }}
             >
               <Image
                 src="/partners/molyslip.png"
                 alt="Molyslip"
-                width={120}
-                height={84}
-                className="object-contain h-10 w-auto"
+                width={240}
+                height={168}
+                className="object-contain h-16 md:h-20 w-auto"
               />
-            </div>
-            <Image
-              src="/partners/dach.png"
-              alt="DACH Chemicals"
-              width={120}
-              height={52}
-              className="object-contain h-9 w-auto opacity-80"
-            />
+            </a>
+            <a
+              href="https://dachchemicals.com/tr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="DACH Chemicals"
+              className="transition-all duration-300 opacity-90 hover:opacity-100 hover:scale-105"
+            >
+              <Image
+                src="/partners/dach.png"
+                alt="DACH Chemicals"
+                width={240}
+                height={104}
+                className="object-contain h-16 md:h-20 w-auto"
+              />
+            </a>
           </div>
         </motion.div>
       </div>
