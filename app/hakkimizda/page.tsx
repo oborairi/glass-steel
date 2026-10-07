@@ -16,14 +16,34 @@ export default function HakkimizdaPage() {
       {/* Main about text */}
       <section className="py-section bg-bg-base">
         <div className="max-w-8xl mx-auto px-6 lg:px-10">
-          <div className="max-w-3xl space-y-8">
-            {[a.p1, a.p2, a.p3, a.p4].map((text, i) => (
-              <FadeIn key={i} delay={0.08 * i}>
-                <p className="text-lg text-fg-secondary leading-loose font-light">
-                  {text}
-                </p>
-              </FadeIn>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            {/* Text */}
+            <div className="space-y-8">
+              {[a.p1, a.p2, a.p3, a.p4].map((text, i) => (
+                <FadeIn key={i} delay={0.08 * i}>
+                  <p className="text-lg text-fg-secondary leading-loose font-light">
+                    {text}
+                  </p>
+                </FadeIn>
+              ))}
+            </div>
+
+            {/* Looping intro video */}
+            <FadeIn delay={0.15} className="lg:sticky lg:top-28">
+              <div className="overflow-hidden rounded-lg border border-line bg-black aspect-video">
+                <video
+                  src="/about-loop.mp4"
+                  poster="/about-loop-poster.jpg"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  aria-label={a.watchVideo}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
